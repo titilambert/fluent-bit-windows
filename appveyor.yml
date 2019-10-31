@@ -1,0 +1,11 @@
+version: 1.0.{build}
+#image: Windows Server 2019
+image: Visual Studio 2019 Preview
+
+install:
+  - ps: Write-Host Server version $(gp 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion').BuildLabEx
+  - docker version
+
+build_script:
+    - ps: docker build -t titilambert/fluend-windows:1.4-alpha2 .
+    - ps: docker push titilambert/fluend-windows:1.4-alpha2
