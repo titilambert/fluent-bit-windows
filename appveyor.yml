@@ -1,4 +1,4 @@
-version: 1.0.{build}-aasdgdsg
+version: 1.0.{build}-AAA
 #image: Windows Server 2019
 
 image: Visual Studio 2019 Preview
@@ -8,6 +8,6 @@ install:
   - docker version
 
 build_script:
-    - ps: docker build -t titilambert/fluend-windows:1.4-alpha5 .
+    - ps: docker build -t titilambert/fluend-windows:1.4-alpha6 .
     - ps: .\login.ps1
-    - ps: docker push titilambert/fluend-windows:1.4-alpha5
+    - ps: docker push titilambert/fluend-windows:1.4-alpha6
