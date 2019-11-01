@@ -6,7 +6,6 @@ install:
   - ps: Write-Host Server version $(gp 'HKLM:\SOFTWARE\Microsoft\Windows NT\CurrentVersion').BuildLabEx
   - docker version
 
-
 build_script:
     - ps: docker build -t titilambert/fluend-windows:1.4-alpha2 .
     - ps: .\login.ps1
