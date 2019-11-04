@@ -6,7 +6,7 @@ FROM mcr.microsoft.com/windows/servercore:ltsc2019
 #FROM stefanscherer/webserver-windows
 
 COPY bin .
-COPY conf\\fluent-bit.conf .
+#COPY conf\\fluent-bit.conf .
 COPY VC_redist.x64.exe .
 RUN C:\VC_redist.x64.exe /quiet /install
 
