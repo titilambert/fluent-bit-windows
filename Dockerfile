@@ -27,7 +27,7 @@ RUN powershell -command cp c:\download\openssl\ssleay32.dll c:\fluentbit
 RUN powershell -command Invoke-WebRequest -Uri https://aka.ms/vs/16/release/vc_redist.x64.exe -OutFile c:\download\VC_redist.x64.exe
 RUN C:\download\VC_redist.x64.exe /quiet /install
 
-RUN powershell -command rm -rf c:\download
+RUN rmdir /s /q c:\download
 
 RUN dir c:\fluentbit
 RUN c:\fluentbit\fluent-bit.exe -V
