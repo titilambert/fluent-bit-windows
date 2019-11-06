@@ -1,15 +1,12 @@
-#FROM mcr.microsoft.com/windows/nanoserver:1803-amd64
+# Use this base image for AKS
 FROM mcr.microsoft.com/windows/servercore:ltsc2019
-#FROM mcr.microsoft.com/windows/nanoserver
-#FROM mcr.microsoft.com/windows/nanoserver:sac2016
-#FROM stefanscherer/webserver-windows
+# Use this base image on your laptop
+#FROM mcr.microsoft.com/windows/nanoserver:1803-amd64
 
-# https://github.com/fluent/fluent-bit/issues/960
-
-#COPY bin .
 RUN mkdir c:\fluentbit
 RUN mkdir c:\download
 # Install fluentbit
+# https://github.com/fluent/fluent-bit/issues/960
 RUN powershell -command Invoke-WebRequest -Uri https://ci.appveyor.com/api/buildjobs/9wmy57txbiub8upp/artifacts/build%2Ftd-agent-bit-1.4.0-win64.zip -OutFile c:\download\td-agent-bit-1.4.0-win64.zip
 RUN mkdir c:\download\td-agent-bit
 RUN powershell -command Expand-Archive c:\download\td-agent-bit-1.4.0-win64.zip -DestinationPath c:\download\td-agent-bit
